@@ -13,10 +13,10 @@ export const downloadCanvasToImage = () => {
   document.body.removeChild(link);
 };
 
-export const reader = (file: Blob) =>
-  new Promise((resolve, reject) => {
+export const reader = (file: File): Promise<string> =>
+  new Promise((resolve) => {
     const fileReader = new FileReader();
-    fileReader.onload = () => resolve(fileReader.result);
+    fileReader.onload = () => resolve(fileReader.result as string);
     fileReader.readAsDataURL(file);
   });
 

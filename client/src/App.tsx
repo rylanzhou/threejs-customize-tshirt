@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import CanvasModel from './Components/CanvasModel';
+import { CanvasModel } from './Components';
 import Customizer from './pages/Customizer';
 import Home from './pages/Home';
 

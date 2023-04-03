@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
 import { useSnapshot } from 'valtio';
 
-import CustomButton from '../Components/CustomButton';
+import { CustomButton } from '../Components';
 import {
   headContainerAnimation,
   headContentAnimation,
