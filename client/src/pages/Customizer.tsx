@@ -77,16 +77,30 @@ export default function Customizer() {
       default:
         state.isFullTexture = false;
         state.isLogoTexture = true;
+        break;
     }
 
     setActiveFilterTab((prev) => ({ ...prev, [tab]: !prev[tab] }));
   };
 
-  const handleSubmit = async (type) => {
+  const handleSubmit = async (type: 'logo' | 'full') => {
     if (!prompt) return alert('Please enter a prompt');
 
     try {
       // call backend for an ai generated image
+      setGeneratingImg(true);
+
+      const response = await fetch('http://localhost:3000/api/dalle', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt }),
+      });
+
+      const data = await response.json();
+
+      handleDecals(type, `data:image/png;base64,${data.photo}`);
     } catch (error) {
       alert(error);
     } finally {
