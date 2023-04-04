@@ -25,6 +25,7 @@ export default function CameraRig({ children }: PropsWithChildren) {
         targetPosition = [0, 0.2, 2.5];
       }
     } else {
+      targetPosition = [0, 0, 2];
       // in customizer page
       if (isTablet) {
         targetPosition = [0, 0, 2];
