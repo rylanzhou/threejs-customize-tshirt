@@ -90,7 +90,7 @@ export default function Customizer() {
       // call backend for an ai generated image
       setGeneratingImg(true);
 
-      const response = await fetch('http://localhost:3000/api/dalle', {
+      const response = await fetch('https://threejs-customize-tshirt-server.vercel.app/api/dalle', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

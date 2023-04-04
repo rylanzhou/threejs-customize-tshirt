@@ -3,7 +3,10 @@ import { Configuration, OpenAIApi } from 'openai';
 
 const allowCORS = (fn) => async (req: VercelRequest, res: VercelResponse) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'http://localhost:5173/, https://threejs-customize-tshirt.vercel.app/',
+  );
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
   res.setHeader(
     'Access-Control-Allow-Headers',
